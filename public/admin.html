@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin & Management Portal | XenProperty Ecosystem</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="logo-icon"><i class="fa-solid fa-house-chimney-window"></i></div>
+        <div class="brand-text">
+          <span class="brand-name">XenProperty</span>
+          <span class="brand-tagline">Admin & Operations Hub</span>
+        </div>
+      </a>
+      <div class="nav-actions">
+        <a href="index.html" class="btn-auth-login"><i class="fa-solid fa-globe"></i> View Website</a>
+        <a href="sell.html" class="btn-list-prop"><i class="fa-solid fa-plus"></i> Add New Property</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MINI HERO -->
+  <div class="page-hero-mini" style="background: linear-gradient(135deg, #111827 0%, #0f5b46 100%);">
+    <div class="container">
+      <span style="font-size:0.75rem; font-weight:800; letter-spacing:1px; text-transform:uppercase; background:rgba(255,255,255,0.15); padding:4px 12px; border-radius:999px;">
+        <i class="fa-solid fa-shield"></i> SECURE MANAGEMENT SYSTEM
+      </span>
+      <h1 style="margin-top:12px;">Real Estate Control Center</h1>
+      <p>Monitor platform statistics, manage active listings, review customer visit schedules, and process financing applications.</p>
+    </div>
+  </div>
+
+  <main class="container" style="margin-bottom:60px;">
+    <!-- KPI METRICS -->
+    <div class="admin-metrics-grid">
+      <div class="metric-card">
+        <div class="metric-icon"><i class="fa-solid fa-house-chimney"></i></div>
+        <div class="metric-data">
+          <h3 id="statTotalProperties">0</h3>
+          <p>Total Active Listings</p>
+        </div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-icon"><i class="fa-solid fa-users"></i></div>
+        <div class="metric-data">
+          <h3 id="statTotalUsers">0</h3>
+          <p>Registered Accounts</p>
+        </div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-icon"><i class="fa-solid fa-calendar-check"></i></div>
+        <div class="metric-data">
+          <h3 id="statTotalInquiries">0</h3>
+          <p>Site Visit Inquiries</p>
+        </div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-icon"><i class="fa-solid fa-wallet"></i></div>
+        <div class="metric-data">
+          <h3 id="statTotalLoans">0</h3>
+          <p>Home Loan Applications</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACTIVE PROPERTIES TABLE -->
+    <div class="admin-data-card">
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <h3 style="font-size:1.25rem; font-weight:800; color:var(--text-main);">Active Property Listings</h3>
+        <a href="sell.html" class="btn-hero-primary" style="padding:7px 16px; font-size:0.8rem;">
+          <i class="fa-solid fa-plus"></i> Add Property
+        </a>
+      </div>
+      <div style="overflow-x:auto;">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Property</th>
+              <th>Type</th>
+              <th>Price</th>
+              <th>AI Score</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="adminPropsTableBody">
+            <tr><td colspan="6" style="text-align:center; padding:20px;">Loading properties...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- CUSTOMER INQUIRIES TABLE -->
+    <div class="admin-data-card">
+      <h3 style="font-size:1.25rem; font-weight:800; color:var(--text-main); margin-bottom:4px;">Recent Customer Inquiries & Site Visits</h3>
+      <p style="font-size:0.82rem; color:var(--text-muted); margin-bottom:12px;">Prospective buyers requesting callbacks and property site tours.</p>
+      <div style="overflow-x:auto;">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Customer Name</th>
+              <th>Contact Details</th>
+              <th>Property Inquired</th>
+              <th>Visit Date</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="adminInquiriesTableBody">
+            <tr><td colspan="6" style="text-align:center; padding:20px;">Loading inquiries...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- HOME LOAN APPLICATIONS TABLE -->
+    <div class="admin-data-card">
+      <h3 style="font-size:1.25rem; font-weight:800; color:var(--text-main); margin-bottom:4px;">Home Loan Financing Applications</h3>
+      <p style="font-size:0.82rem; color:var(--text-muted); margin-bottom:12px;">Submitted digital mortgage applications pending partner bank review.</p>
+      <div style="overflow-x:auto;">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Applicant</th>
+              <th>Loan Amount</th>
+              <th>Monthly Income</th>
+              <th>Bank Preference</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="adminLoansTableBody">
+            <tr><td colspan="6" style="text-align:center; padding:20px;">Loading loans...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>&copy; 2026 XenProperty Technologies India Pvt. Ltd. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
